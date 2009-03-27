@@ -1,0 +1,2314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.2" 
+         version="2.0" 
+         xmlns="http://pear.php.net/dtd/package-2.0" 
+         xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+                             http://pear.php.net/dtd/tasks-1.0.xsd
+                             http://pear.php.net/dtd/package-2.0
+                             http://pear.php.net/dtd/package-2.0.xsd">
+    <name>Services_Digg</name>
+    <channel>pear.php.net</channel>
+    <summary>PHP interface to Digg's API</summary>
+    <description>An interface for accessing Digg's web services API at http://services.digg.com.</description>
+    <lead>
+        <name>Joe Stump</name>
+        <user>jstump</user>
+        <email>joe@joestump.net</email>
+        <active>yes</active>
+    </lead>
+    <date>2008-04-22</date>
+    <version>
+        <release>0.4.4</release>
+        <api>0.4.4</api>
+    </version>
+    <stability>
+        <release>alpha</release>
+        <api>alpha</api>
+    </stability>
+    <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+    <notes><![CDATA[
+        * Fixed it so Services_Digg_Proxy passes on $_GET['appkey'] if it's provided.
+    ]]></notes>
+    <contents>
+        <dir name="/">
+            <dir name="Services">
+                <file name="Digg.php"
+                      role="php" />
+                <dir name="Digg">
+                    <file name="Comments.php"
+                          role="php" />
+                    <file name="Comment.php"
+                          role="php" />
+                    <file name="Common.php"
+                          role="php" />
+                    <file name="Errors.php"
+                          role="php" />
+                    <file name="Exception.php"
+                          role="php" />
+                    <file name="Proxy.php"
+                          role="php" />
+                    <file name="Request.php"
+                          role="php" />
+                    <file name="Response.php"
+                          role="php" />
+                    <file name="GalleryPhotos.php"
+                          role="php" />
+                    <file name="GalleryPhoto.php"
+                          role="php" />
+                    <file name="Stories.php"
+                          role="php" />
+                    <file name="Story.php"
+                          role="php" />
+                    <file name="Topics.php"
+                          role="php" />
+                    <file name="User.php"
+                          role="php" />
+                    <file name="Users.php"
+                          role="php" />
+                    <dir name="Response">
+                        <file name="Common.php"
+                              role="php" />
+                        <file name="Exception.php"
+                              role="php" />
+                        <file name="php.php"
+                              role="php" />
+                        <file name="xml.php"
+                              role="php" />
+                    </dir>
+                </dir>
+            </dir>
+            <dir name="tests">
+                <file name="000-services-digg-factory.phpt"
+                      role="test" />
+                <file name="001-errors-getAll.phpt"
+                      role="test" /> 
+                <file name="003-errors-getErrorByCode.phpt"
+                      role="test" /> 
+                <file name="005-topics-getAll.phpt"
+                      role="test" /> 
+                <file name="010-user-submissions.phpt"
+                      role="test" /> 
+                <file name="011-user-isFriend.phpt"
+                      role="test" /> 
+                <file name="012-user-isFan.phpt"
+                      role="test" /> 
+                <file name="013-user-comments.phpt"
+                      role="test" /> 
+                <file name="013-user-getFriendsCommented.phpt"
+                      role="test" /> 
+                <file name="013-user-getFriendsDugg.phpt"
+                      role="test" /> 
+                <file name="013-user-getFriendsPopular.phpt"
+                      role="test" /> 
+                <file name="013-user-getFriendsSubmissions.phpt"
+                      role="test" /> 
+                <file name="013-user-getFriendsUpcoming.phpt"
+                      role="test" /> 
+                <file name="014-user-diggs.phpt"
+                      role="test" /> 
+                <file name="020-users-getUserByName.phpt"
+                      role="test" /> 
+                <file name="030-stories-getStoryById.phpt"
+                      role="test" /> 
+                <file name="031-stories-getContainer.phpt"
+                      role="test" /> 
+                <file name="031-stories-getContainerHot.phpt"
+                      role="test" /> 
+                <file name="031-stories-getContainerTop.phpt"
+                      role="test" /> 
+                <file name="032-stories-getContainerPopular.phpt"
+                      role="test" /> 
+                <file name="032-stories-getContainerUpcoming.phpt"
+                      role="test" /> 
+                <file name="033-stories-getStoriesById.phpt"
+                      role="test" /> 
+                <file name="034-stories-comments.phpt"
+                      role="test" /> 
+                <file name="034-stories-diggs.phpt"
+                      role="test" /> 
+                <file name="034-stories-popular.phpt"
+                      role="test" /> 
+                <file name="035-stories-getAll.phpt"
+                      role="test" /> 
+                <file name="035-stories-getStoriesComments.phpt"
+                      role="test" /> 
+                <file name="035-stories-getStoriesDiggs.phpt"
+                      role="test" /> 
+                <file name="036-stories-getStoryByTitle.phpt"
+                      role="test" /> 
+                <file name="037-stories-hot.phpt"
+                      role="test" /> 
+                <file name="037-stories-top.phpt"
+                      role="test" /> 
+                <file name="038-stories-getTopic.phpt"
+                      role="test" /> 
+                <file name="038-stories-getTopicHot.phpt"
+                      role="test" /> 
+                <file name="038-stories-getTopicTop.phpt"
+                      role="test" /> 
+                <file name="040-story-comments.phpt"
+                      role="test" /> 
+                <file name="041-story-getCommentById.phpt"
+                      role="test" /> 
+                <file name="050-comments.phpt"
+                      role="test" /> 
+                <file name="060-comment-replies.phpt"
+                      role="test" /> 
+                <file name="070-proxy-get.phpt"
+                      role="test" />
+                <file name="071-proxy-post.phpt"
+                      role="test" />
+                <file name="080-exception-toString.phpt"
+                      role="test" />
+                <file name="150-request.phpt"
+                      role="test" />
+                <file name="200-diggapiuser-isFriend.phpt"
+                      role="test" /> 
+                <file name="201-diggapistories-iteration.phpt"
+                      role="test" /> 
+                <file name="tests-config.php"
+                      role="test" /> 
+            </dir>
+        </dir>
+    </contents>
+    <dependencies>
+        <required>
+            <php>
+                <min>5.1.0</min>
+            </php>
+            <pearinstaller>
+                <min>1.4.0b1</min>
+            </pearinstaller>
+            <extension>
+                <name>curl</name>
+            </extension>
+        </required>
+    </dependencies>
+    <phprelease />
+    <changelog>
+        <release>
+            <date>2008-03-21</date>
+            <version>
+                <release>0.4.3</release>
+                <api>0.4.3</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Added Services_Digg_Exception::__toString() to override PEAR_Exception's HTML output
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Request.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="GalleryPhotos.php"
+                                  role="php" />
+                            <file name="GalleryPhoto.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="Exception.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsCommented.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsDugg.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsPopular.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsSubmissions.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsUpcoming.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerHot.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerTop.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="037-stories-hot.phpt"
+                              role="test" /> 
+                        <file name="037-stories-top.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopic.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicHot.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicTop.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="080-exception-toString.phpt"
+                              role="test" />
+                        <file name="150-request.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2008-01-29</date>
+            <version>
+                <release>0.4.2</release>
+                <api>0.4.2</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Added the missing PHP class DiggAPILink
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Request.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="GalleryPhotos.php"
+                                  role="php" />
+                            <file name="GalleryPhoto.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="Exception.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsCommented.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsDugg.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsPopular.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsSubmissions.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsUpcoming.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerHot.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerTop.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="037-stories-hot.phpt"
+                              role="test" /> 
+                        <file name="037-stories-top.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopic.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicHot.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicTop.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="150-request.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-12-04</date>
+            <version>
+                <release>0.4.1</release>
+                <api>0.4.1</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Added Services_Digg_Stories::getUpcomingDiggs()
+                * Added Services_Digg_Stories::getUpcomingComments()
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Request.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="GalleryPhotos.php"
+                                  role="php" />
+                            <file name="GalleryPhoto.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="Exception.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsCommented.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsDugg.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsPopular.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsSubmissions.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsUpcoming.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerHot.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerTop.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="037-stories-hot.phpt"
+                              role="test" /> 
+                        <file name="037-stories-top.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopic.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicHot.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicTop.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="150-request.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-10-18</date>
+            <version>
+                <release>0.4.0</release>
+                <api>0.4.0</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Added Services_Digg_Request to send requests to the API asynchronously in parallel.
+                * Added classes to Services_Digg_Response_php for the launch of Digg Images .
+                * Reworked exception handling of responses so that the last API call and raw API response are included in the exceptions thrown.
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Request.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="GalleryPhotos.php"
+                                  role="php" />
+                            <file name="GalleryPhoto.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="Exception.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsCommented.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsDugg.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsPopular.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsSubmissions.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsUpcoming.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerHot.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerTop.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="037-stories-hot.phpt"
+                              role="test" /> 
+                        <file name="037-stories-top.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopic.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicHot.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicTop.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="150-request.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-09-12</date>
+            <version>
+                <release>0.3.2</release>
+                <api>0.3.0</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Fixed Bug #11999
+                * Added endpoints and classes for new user galleries
+                * Added unit tests for new user galleries
+                * Added a few missing unit tests
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="GalleryPhotos.php"
+                                  role="php" />
+                            <file name="GalleryPhoto.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsCommented.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsDugg.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsPopular.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsSubmissions.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsUpcoming.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerHot.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerTop.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="037-stories-hot.phpt"
+                              role="test" /> 
+                        <file name="037-stories-top.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopic.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicHot.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicTop.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-09-12</date>
+            <version>
+                <release>0.3.1</release>
+                <api>0.3.0</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Fixed Bug #11999
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="GalleryPhotos.php"
+                                  role="php" />
+                            <file name="GalleryPhoto.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsDugg.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsSubmissions.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerHot.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerTop.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="037-stories-hot.phpt"
+                              role="test" /> 
+                        <file name="037-stories-top.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopic.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicHot.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicTop.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-08-16</date>
+            <version>
+                <release>0.3.0</release>
+                <api>0.3.0</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Added GalleryPhoto and GalleryPhotos support for the new user profiles.
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="GalleryPhotos.php"
+                                  role="php" />
+                            <file name="GalleryPhoto.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsDugg.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsSubmissions.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerHot.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerTop.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="037-stories-hot.phpt"
+                              role="test" /> 
+                        <file name="037-stories-top.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopic.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicHot.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicTop.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-08-14</date>
+            <version>
+                <release>0.2.2</release>
+                <api>0.2.2</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Added the $params argument to Services_Digg_Stories::getStoryById() and Services_Digg_Stories::getStoryByTitle().
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="GalleryPhotos.php"
+                                  role="php" />
+                            <file name="GalleryPhoto.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsDugg.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsSubmissions.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerHot.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerTop.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="037-stories-hot.phpt"
+                              role="test" /> 
+                        <file name="037-stories-top.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopic.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicHot.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicTop.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-07-26</date>
+            <version>
+                <release>0.2.1</release>
+                <api>0.2.1</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Added Services_Digg_Proxy::addRequestHeader() to allow munging of request headers sent via the proxy
+                * Fixed a major bug in Services_Digg_Stories::getTopicTop()
+                * Fixed various tests now that the endpoints are live.
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsDugg.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsSubmissions.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerHot.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerTop.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="037-stories-hot.phpt"
+                              role="test" /> 
+                        <file name="037-stories-top.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopic.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicHot.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicTop.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-07-19</date>
+            <version>
+                <release>0.2.0</release>
+                <api>0.2.0</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Added Services_Digg_Stories::getContainerTop()
+                * Added Services_Digg_Stories::getContainerHot()
+                * Added Services_Digg_Stories::getTopicTop()
+                * Added Services_Digg_Stories::getTopicHot()
+                * Added Services_Digg_User::getFriendsSubmissions()
+                * Added Services_Digg_User::getFriendsSubmissions()
+                * Added Services_Digg_User::getFriendsDugg()
+                * Added Services_Digg_User::getFriendsCommented()
+                * Added Services_Digg_User::getFriendsUpcoming()
+                * Added Services_Digg_User::getFriendsPopular()
+                * Added unit tests for new endpoints and methods
+                * Fixed a notice in object iteration in DiggAPIStories
+                * Fixed a problem with forwarding all HTTP headers blindly in Services_Digg_Proxy
+                * Fixed Services_Digg_Proxy to throw an exception if curl_exec() returns false
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsDugg.phpt"
+                              role="test" /> 
+                        <file name="013-user-getFriendsSubmissions.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerHot.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainerTop.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="037-stories-hot.phpt"
+                              role="test" /> 
+                        <file name="037-stories-top.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopic.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicHot.phpt"
+                              role="test" /> 
+                        <file name="038-stories-getTopicTop.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-06-29</date>
+            <version>
+                <release>0.1.2</release>
+                <api>0.1.1</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Pass along X-Forwarded-For HTTP header in Services_Digg_Proxy
+                * Pass along the HTTP referer in Services_Digg_Proxy
+                * Pass all HTTP headers received from the API back to the client
+                * Allow JSON, XML and JavaScript types to be used via Services_Digg_Proxy
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-06-08</date>
+            <version>
+                <release>0.1.1</release>
+                <api>0.1.1</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Added Services_Digg_Story::getCommentById()
+                * Added unit test for new function
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="041-story-getCommentById.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release> 
+        <release>
+            <version>
+                <release>0.1.0</release>
+                <api>0.1.0</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Initial release
+                * Added Services_Digg_Exception
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Exception.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-04-23</date>
+            <time>15:53:42</time>
+            <version>
+                <release>0.0.2</release>
+                <api>0.0.2</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+            <notes><![CDATA[
+                * Switched from HTTP_Request to cURL
+                * Switched from PEAR_Error to PEAR_Exception
+                * Switched license to New BSD License
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+        <release>
+            <date>2007-04-17</date>
+            <time>15:53:42</time>
+            <version>
+                <release>0.0.1</release>
+                <api>0.0.1</api>
+            </version>
+            <stability>
+                <release>alpha</release>
+                <api>alpha</api>
+            </stability>
+            <license uri="http://www.opensource.org/licenses/lgpl-license.php">GNU Lesser General Public License v2.1</license>
+            <notes><![CDATA[
+                * Initial release
+            ]]></notes>
+            <contents>
+                <dir name="/">
+                    <dir name="Services">
+                        <file name="Digg.php"
+                              role="php" />
+                        <dir name="Digg">
+                            <file name="Comments.php"
+                                  role="php" />
+                            <file name="Comment.php"
+                                  role="php" />
+                            <file name="Common.php"
+                                  role="php" />
+                            <file name="Errors.php"
+                                  role="php" />
+                            <file name="Proxy.php"
+                                  role="php" />
+                            <file name="Response.php"
+                                  role="php" />
+                            <file name="Stories.php"
+                                  role="php" />
+                            <file name="Story.php"
+                                  role="php" />
+                            <file name="Topics.php"
+                                  role="php" />
+                            <file name="User.php"
+                                  role="php" />
+                            <file name="Users.php"
+                                  role="php" />
+                            <dir name="Response">
+                                <file name="Common.php"
+                                      role="php" />
+                                <file name="php.php"
+                                      role="php" />
+                                <file name="xml.php"
+                                      role="php" />
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="tests">
+                        <file name="000-services-digg-factory.phpt"
+                              role="test" />
+                        <file name="001-errors-getAll.phpt"
+                              role="test" /> 
+                        <file name="003-errors-getErrorByCode.phpt"
+                              role="test" /> 
+                        <file name="005-topics-getAll.phpt"
+                              role="test" /> 
+                        <file name="010-user-submissions.phpt"
+                              role="test" /> 
+                        <file name="011-user-isFriend.phpt"
+                              role="test" /> 
+                        <file name="012-user-isFan.phpt"
+                              role="test" /> 
+                        <file name="013-user-comments.phpt"
+                              role="test" /> 
+                        <file name="014-user-diggs.phpt"
+                              role="test" /> 
+                        <file name="020-users-getUserByName.phpt"
+                              role="test" /> 
+                        <file name="030-stories-getStoryById.phpt"
+                              role="test" /> 
+                        <file name="031-stories-getContainer.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerPopular.phpt"
+                              role="test" /> 
+                        <file name="032-stories-getContainerUpcoming.phpt"
+                              role="test" /> 
+                        <file name="033-stories-getStoriesById.phpt"
+                              role="test" /> 
+                        <file name="034-stories-comments.phpt"
+                              role="test" /> 
+                        <file name="034-stories-diggs.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="034-stories-popular.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getAll.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesComments.phpt"
+                              role="test" /> 
+                        <file name="035-stories-getStoriesDiggs.phpt"
+                              role="test" /> 
+                        <file name="036-stories-getStoryByTitle.phpt"
+                              role="test" /> 
+                        <file name="040-story-comments.phpt"
+                              role="test" /> 
+                        <file name="050-comments.phpt"
+                              role="test" /> 
+                        <file name="060-comment-replies.phpt"
+                              role="test" /> 
+                        <file name="070-proxy-get.phpt"
+                              role="test" />
+                        <file name="071-proxy-post.phpt"
+                              role="test" />
+                        <file name="200-diggapiuser-isFriend.phpt"
+                              role="test" /> 
+                        <file name="201-diggapistories-iteration.phpt"
+                              role="test" /> 
+                        <file name="tests-config.php"
+                              role="test" /> 
+                    </dir>
+                </dir>
+            </contents>
+        </release>
+    </changelog>
+</package>
