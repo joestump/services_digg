@@ -1123,4 +1123,36 @@ if (!class_exists('DiggAPIUsers', false)) {
     }
 }
 
+if (!class_exists('DiggAPIAPIGroups', false)) {
+    /**
+     * DiggAPIAPIGroups
+     *
+     * @category    Services
+     * @package     Services_Digg
+     * @author      Joe Stump <joe@joestump.net>
+     */
+    class DiggAPIAPIGroups implements IteratorAggregate
+    {
+        public function getIterator()
+        {
+            return new ArrayObject($this->groups);
+        }
+    }
+}
+
+if (!class_exists('DiggAPIAPIGroup', false)) {
+    /**
+     * DiggAPIAPIGroup
+     *
+     * @category    Services
+     * @package     Services_Digg
+     * @author      Joe Stump <joe@joestump.net>
+     */
+    class DiggAPIAPIGroup
+    {
+
+    }
+}
+
+
 ?>
