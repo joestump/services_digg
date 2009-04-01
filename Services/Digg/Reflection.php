@@ -52,6 +52,16 @@ class Services_Digg_Reflection extends Services_Digg_Common
     {
         return $this->sendRequest('/reflection/group/' . $group);
     }
+
+    public function getArgs()
+    {
+        return $this->sendRequest('/reflection/args/');
+    }
+
+    public function getArg($arg)
+    {
+        return $this->sendRequest('/reflection/arg/' . $arg);
+    }
 }
 
 ?>

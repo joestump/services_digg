@@ -44,7 +44,7 @@ class Services_Digg_Response_php extends Services_Digg_Response_Common
      */
     public function parse()
     {
-        $result = @unserialize($this->response);
+        $result = unserialize($this->response);
         if (!is_object($result)) {
             throw new Services_Digg_Response_Exception('Could not parse result');
         }
@@ -1140,6 +1140,24 @@ if (!class_exists('DiggAPIAPIGroups', false)) {
     }
 }
 
+if (!class_exists('DiggAPIAPIArgs', false)) {
+    /**
+     * DiggAPIAPIArgs
+     *
+     * @category    Services
+     * @package     Services_Digg
+     * @author      Joe Stump <joe@joestump.net>
+     */
+    class DiggAPIAPIArgs implements IteratorAggregate
+    {
+        public function getIterator()
+        {
+            return new ArrayObject($this->args);
+        }
+    }
+}
+
+
 if (!class_exists('DiggAPIAPIGroup', false)) {
     /**
      * DiggAPIAPIGroup
@@ -1149,6 +1167,48 @@ if (!class_exists('DiggAPIAPIGroup', false)) {
      * @author      Joe Stump <joe@joestump.net>
      */
     class DiggAPIAPIGroup
+    {
+
+    }
+}
+
+if (!class_exists('DiggAPIAPIEndpoint', false)) {
+    /**
+     * DiggAPIAPIEndpoint
+     *
+     * @category    Services
+     * @package     Services_Digg
+     * @author      Joe Stump <joe@joestump.net>
+     */
+    class DiggAPIAPIEndpoint
+    {
+
+    }
+}
+
+if (!class_exists('DiggAPIAPIArg', false)) {
+    /**
+     * DiggAPIAPIArg
+     *
+     * @category    Services
+     * @package     Services_Digg
+     * @author      Joe Stump <joe@joestump.net>
+     */
+    class DiggAPIAPIArg
+    {
+
+    }
+}
+
+if (!class_exists('DiggAPIAPIArgRule', false)) {
+    /**
+     * DiggAPIAPIRule
+     *
+     * @category    Services
+     * @package     Services_Digg
+     * @author      Joe Stump <joe@joestump.net>
+     */
+    class DiggAPIAPIArgRule
     {
 
     }
